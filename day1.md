@@ -51,7 +51,7 @@ console.log(5==='5')
 arr = [2, 3, 4, 5,6];
  arr.forEach((element)=>console.log(element));
  ```
-
+# difference between argument and parameter
  - argument are passed in function as
  ```bash
  greet(a, b) 
