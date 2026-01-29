@@ -50,3 +50,19 @@ console.log(5==='5')
 ```js 
 arr = [2, 3, 4, 5,6];
  arr.forEach((element)=>console.log(element));
+ ```
+
+ - argument are passed in function as
+ ```bash
+ greet(a, b) 
+ ``` 
+ - where a and b are argument 
+
+ - paramater are defined in function 
+
+ ```js
+ greet(a, b){
+    return a+b;
+ }
+ ```
+ ### here a and b is parameter
