@@ -1,4 +1,3 @@
-
 // three things to keep in mind is hoisting, mutability and scope.
 // hoisting means using a variable before its delaration 
 //const is immutable and var and let are not.
@@ -6,7 +5,7 @@
 // let has block scoped 
 // const can not be updated or re assigned 
 
-
+data types in java script
 let a = 20;
 let str = "hello";
 let isok = true;
