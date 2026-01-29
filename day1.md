@@ -45,3 +45,8 @@ console.log(5=='5')
 console.log(5==='5')
 ```
 - it check both value and data type so it will be false
+
+# for each loop in java script
+```js 
+arr = [2, 3, 4, 5,6];
+ arr.forEach((element)=>console.log(element));
