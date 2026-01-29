@@ -1,13 +1,11 @@
 ## difference between var , let and const in java script
-// three things to keep in mind is hoisting, mutability and scope.
-// hoisting means using a variable before its delaration 
-//const is immutable and var and let are not.
-// var has vast scope 
-// let has block scoped 
-// const can not be updated or re assigned 
+- three things to keep in mind is hoisting, mutability and scope.
+- hoisting means using a variable before its delaration 
+- const is immutable and var and let are not.
+- var has vast scope 
+- let has block scoped 
+- const can not be updated or re assigned 
 ## data types 
-data types in java script
-
 ```js
 let a = 20;
 let str = "hello";
