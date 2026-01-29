@@ -7,6 +7,8 @@
 // const can not be updated or re assigned 
 ## data types 
 data types in java script
+
+```js
 let a = 20;
 let str = "hello";
 let isok = true;
@@ -14,10 +16,11 @@ let arr = [1, 2, 3];
 let obj = {name: "Dennis", age:20};
 let empty = null;
 let b;
+```
 -- object is a universal data type that can be converted in to any data type 
 -- thats why b is object because we have give any data type or thing so that it can be converted in to that. that's why it is null  
 
-'''js
+```js
 console.log(typeof(a))
 console.log(typeof(str))
 console.log(typeof(isok))
@@ -33,11 +36,14 @@ object
 object
 object
 undefined
+```
 
--- equality operator 
-'''js
-console.log(5=='5') 
--- it is called equality operater it does not check that what is data type it only checks if value is equal or not 
-'''js
-console.log(5==='5') 
---- it check both value and data type so it will be false
+- equality operator 
+```js
+console.log(5=='5')
+```
+- it is called equality operater it does not check that what is data type it only checks if value is equal or not 
+```js
+console.log(5==='5')
+```
+- it check both value and data type so it will be false
