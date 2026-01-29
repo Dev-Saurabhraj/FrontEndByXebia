@@ -21,3 +21,11 @@ console.log(typeof(arr))
 console.log(typeof(obj))
 console.log(typeof(empty));
 console.log(typeof(b))
+
+number
+string
+boolean
+object
+object
+object
+undefined
