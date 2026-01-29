@@ -22,3 +22,9 @@ console.log(typeof(arr))
 console.log(typeof(obj))
 console.log(typeof(empty));
 console.log(typeof(b))
+
+
+// type check 
+
+console.log(5=='5') // it is called equality operater it does not check that what is data type it only checks if value is equal or not 
+console.log(5==='5') // it check both value and data type so it will be false
