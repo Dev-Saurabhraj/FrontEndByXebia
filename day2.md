@@ -93,6 +93,111 @@ output
     Addition : 9
     Multiplication : 20
 ```
+# Object
+
+```js
+const sales = "Toyota";
+function Types(name){
+    return name==="Honda"? name:"Sorry";
+}
+
+const car = {mycar: "saturn", getcar: Types("Honda"), special: sales};
+
+console.log(car.mycar)
+console.log(car.getcar);
+console.log(car.special);
+```
+
+output 
+```bash
+    saturn
+    Honda
+    Toyota
+```
+
+```js
+const student = {name: "Rom", age : 21, hobby: "cricket"}
+
+for(key in student){
+    console.log(key.student);
+}
+```
+output 
+```bash
+    undefined
+    undefined
+    undefined
+```
+## object key and value
+```js
+const student = {name: "Rom", age : 21, hobby: "cricket"}
+
+for(key in student){
+    console.log(key); // fory value use student[key];
+}
+```
+output 
+```bash
+    name
+    age
+    hobby
+```
+## (for in) and (for of)
+
+### for in used for index
+```js
+const fruits = ["Apple", "banana", "mango"];
+for(var i in fruits){
+    console.log(i)
+}
+```
+output 
+```bash
+0
+1
+2
+```
 
 
+### for of used for value 
 
+```js
+const fruits = ["Apple", "banana", "mango"];
+
+for(var i of fruits){
+    console.log(i)
+}
+```
+output 
+```bash
+Apple
+banana
+mango
+```
+## write a script to count vowel in "javascript"
+
+```js
+var vowelCount = 0;
+for(char c of "javascript"){
+    if(c==='a'|| c==='e'||c==='i'|| c==='o'|| c==='u'){
+        vowelCount++;
+    }
+}
+console.log(vowelCount)
+```
+output
+```bash
+3
+```
+```js
+const colors = ["red", "yellow", "blue"];
+for(const[index, color] of colors.entries()){ // type of colors.entries() is Object [Array Iterator] {}
+    console.log(index, color)
+}
+```
+output
+```bash
+0 red
+1 yellow
+2 blue
+```
