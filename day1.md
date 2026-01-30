@@ -5,6 +5,12 @@
 - var has vast scope 
 - let has block scoped 
 - const can not be updated or re assigned 
+## hoisting 
+```js
+   console.log(a); //undefined
+   var a = 0;
+   ```.
+
 ## data types 
 ```js
 let a = 20;
