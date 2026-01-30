@@ -60,9 +60,54 @@ arr = [2, 3, 4, 5,6];
 
  - paramater are defined in function 
 
+ ### here a and b is parameter
  ```js
  greet(a, b){
     return a+b;
  }
  ```
- ### here a and b is parameter
+ ## rest parameter
+```js
+function funt(a, ...b){ 
+    console.log(a);
+    console.log(b);
+}
+funt(1, 2,3,4, 5, 6)
+
+```
+### output
+```bash
+1
+[ 2, 3, 4, 5, 6 ]
+```
+
+
+
+
+ -A rest parameter must be last in a parameter list.
+ - syntext error 
+  - (...a, b),
+  - (a, ...b, ...c)
+```js
+  const arr = [10,20,30]
+const arr1 = [10,20,50]
+
+const finalArr = [...arr,...arr1] //spread operator
+
+const [a,b,c] = arr //destructuring of array
+console.log(a+ b + c);
+console.log(finalArr);
+
+const [x,...y] = arr1 //destructuring of array with rest operator
+console.log(y);
+
+const myobj = {
+  name: "Abc",
+  age:20,
+  key:"pqr"
+}
+let duplicateObj = myobj
+let obj = {...myobj,age :21}
+//console.log(obj);
+console.log(duplicateObj);'
+```
