@@ -40,16 +40,24 @@ output
 - we can change the value of key not the key
 - we are not reassigning the value of key 
 
-## string interpolation 
+## string interpolation  or backtick
+- it can also be usage as text block like in java and html pretag
 ```js
 function greet(name){
     console.log(`hello ${name}`)
 }
 greet("saurabh")
+
+//using as text block
+console.log(`hello class,
+how are you?`)
 ```
 output 
 ```bash
-    hello saurabh
+hello saurabh
+
+hello class,
+how are you?
 ```
 
 ## Function Expression

@@ -21,3 +21,7 @@ console.log(myage);
 console.log(mykey);
 
 console.log(duplicate)
+
+
+console.log(`hello class,
+how are you?`)
