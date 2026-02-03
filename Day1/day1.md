@@ -100,7 +100,7 @@ const arr1 = [10,20,50]
 
 const finalArr = [...arr,...arr1] //spread operator
 
-const [a,b,c] = arr //destructuring of array
+const [a,b,c] = arr //destructuring of array 
 console.log(a+ b + c);
 console.log(finalArr);
 
