@@ -80,6 +80,22 @@ output
 ```bash
     [Function : factorial] 
     120
+```
+
+```js
+let myobj =()=>{name:'abc'}
+console.log(myobj()) 
+
+//fix
+let myobj =()=>({name:'abc'})
+console.log(myobj()) 
+
+```
+output 
+```bash
+    undefine
+
+    {name: "abc"}
 
 ```
 
@@ -100,6 +116,21 @@ output
 ```bash
     Addition : 9
     Multiplication : 20
+```
+
+### a another way of defining function
+```js
+let name = "saurabh"
+let greet=name=>`hello ${name}`; // hello saurabh
+```
+### a another way of defining function
+```js
+let x =10;
+let sum=(x, y=50)=>{
+    let result =  x+y;
+    return result;
+}
+sum(x) / 70
 ```
 # Object
 
@@ -122,6 +153,38 @@ output
     Honda
     Toyota
 ```
+### fucntion does not consider this.age so it is not int the scope of function and only arrow funciton can only use 'this' key word.
+
+```js
+function person(){
+    this.age = 10;
+    setTimeout(function(){
+        console.log(this.age);
+    }, 1000);
+}
+new person();
+
+```
+```bash
+undefined
+```
+
+### fix version of uppper case
+```js
+function person(){
+    this.age = 10;
+    setTimeout(()=>{
+        console.log(this.age);
+    }, 1000);
+}
+new person();
+
+```
+```bash
+10
+```
+
+
 
 ```js
 const student = {name: "Rom", age : 21, hobby: "cricket"}

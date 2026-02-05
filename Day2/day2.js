@@ -46,16 +46,24 @@
 //     console.log(i)
 // }
 
-var vowelCount = 0
-for(const c of "javascript"){
-    if(c==='a'|| c==='e'||c==='i'|| c==='o'|| c==='u'){
-        vowelCount++;
-    }
-}
-console.log(vowelCount)
-
-const colors = ["red", "yellow", "blue"];
-// for(const[index, color] of colors.entries()){
-//     console.log(index, color)
+// var vowelCount = 0
+// for(const c of "javascript"){
+//     if(c==='a'|| c==='e'||c==='i'|| c==='o'|| c==='u'){
+//         vowelCount++;
+//     }
 // }
-console.log(colors.entries())
+// console.log(vowelCount)
+
+// const colors = ["red", "yellow", "blue"];
+// // for(const[index, color] of colors.entries()){
+// //     console.log(index, color)
+// // }
+// console.log(colors.entries())
+
+function person(){
+    let age = 10;
+    setTimeout(function(){
+        console.log(age);
+    }, 1000);
+}
+new person();
