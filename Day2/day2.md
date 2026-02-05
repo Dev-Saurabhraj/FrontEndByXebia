@@ -153,7 +153,7 @@ output
     Honda
     Toyota
 ```
-### fucntion does not consider this.age so it is not int the scope of function and only arrow funciton can only use 'this' key word.
+### function does not consider this.age so it is not int the scope of function and only arrow funciton can only use 'this' key word.
 
 ```js
 function person(){
