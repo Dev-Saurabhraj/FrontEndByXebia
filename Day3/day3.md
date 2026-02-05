@@ -78,3 +78,5 @@ mykey
 { name: 'abc', age: 20, key: 'mykey' }
 ```
 - in this we have used alisa in destructuring because we cannot reintialize same variable twice 
+
+
