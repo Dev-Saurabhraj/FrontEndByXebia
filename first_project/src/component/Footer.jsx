@@ -1,7 +1,7 @@
-export function Footer(){
+export function Footer(props){
     return(
-        <h2>
-            this is footer of the react app
-        </h2>
+        <footer>
+            <p> {props.year[2]} {props.college.name}</p>
+        </footer>
     )
 }

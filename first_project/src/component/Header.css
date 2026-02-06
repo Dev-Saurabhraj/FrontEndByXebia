@@ -1,5 +1,15 @@
 .navigation{
-    background-color: aqua;
-    padding: 16;
-    gap: 30px;
+    color: purple;
+    text-align: left;
+}
+body{
+    vertical-align: top;
+    background-color: aliceblue;
+}
+
+#heading {
+    text-align: center;
+    color: #00ffdd;
+    background-color: rgb(25, 0, 187);
+    margin-top: 0;
 }

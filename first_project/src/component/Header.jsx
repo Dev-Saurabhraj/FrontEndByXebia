@@ -1,12 +1,14 @@
  import './Header.css'
- export function Header(){
+ export function Header(props){
     return(
         <>
-        <h2>
-            this my fist react app.
+        <h2 id='heading'>
+            {props.title}
         </h2>
         <nav className='navigation'>
-        <a href="#" > contact us </a>
+        <a href='#'>Home</a>
+        <a href="#" >contact us </a>
+        <a href='#'>About Us</a>
         </nav>
         </>
         
