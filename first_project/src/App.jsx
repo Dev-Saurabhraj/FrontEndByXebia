@@ -6,8 +6,14 @@ export default function App() {
   const person = {name:"saurabh", age:"21"}
   return (
     <>
-    <Header title="my first react app" />
+    <Header title="my first react app" color ="red" year = '2009' />
     <Header title="this is getting very interesting" />
+
+    <card id = "productcard">
+      <h2>product : </h2>
+      <p>Description : </p>
+      <p>Price : </p>
+    </card>
     
   <h1>
     welcome to my first react App.
