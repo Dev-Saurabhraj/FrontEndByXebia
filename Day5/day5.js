@@ -27,10 +27,23 @@ setTimeout(()=>{
 }
 
 
-bakeCake().then((msg)=>{
-console.log(`msg :${msg}`);
-console.log("now u can eat the cake")
-}).catch((err)=>{
-    console.log(`msg : ${err}`);
-    console.log(`3.Now you can not eat the cake`)
-})
+// bakeCake().then((msg)=>{
+// console.log(`msg :${msg}`);
+// console.log("now u can eat the cake")
+// }).catch((err)=>{
+//     console.log(`msg : ${err}`);
+//     console.log(`3.Now you can not eat the cake`)
+// })
+
+async function party(){
+console.log("1. start baking the cake")
+}
+
+try{
+   const cake =  await bakeCake();
+   console.log(`cake : ${cake}`)
+    party();
+}catch(error){
+    console.log("errror : "+error)
+}
+

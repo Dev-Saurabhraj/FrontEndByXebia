@@ -5,3 +5,5 @@ const {name , place} = arr;
 
 console.log(name)
 console.log(place)
+
+
