@@ -1,4 +1,6 @@
 import './event.css'
+import './taskList.css'
+import './textBox.css'
 export function EventToDo(props){
 
     function handleClick(){
@@ -9,16 +11,15 @@ export function EventToDo(props){
         e.preventDefault();
          const input = e.target.task.value.trim();
         console.log(input)
-        const taskVale = input.trim();
-        if(taskVale===""){
+        const taskValue = input.trim();
+        if(taskValue===""){
             alert("cona not add empty task");
             return;
         }
         const li = document.createElement("li");
-        li.innerHTML=`<span>${taskVale}</span>
+        li.innerHTML=`<span>${taskValue}</span>
         <button class="deleteBtn">Delete </button>`;
         document.getElementById("taskList").appendChild(li);
-
 
     }
     function handleListClick(e){
@@ -32,7 +33,7 @@ export function EventToDo(props){
         <button onClick={handleClick}>Click Me</button>
         <h1>TO DO List</h1>
         <form onSubmit={handleSubmit}>
-            <input type='text' name='task' placeholder='Enter task'/>
+            <input id='textBox' type='text' name='task' placeholder='Enter task'/>
             <button type='submit' > Add task </button>
         </form>
         <ul id='taskList'onClick={handleListClick}></ul>

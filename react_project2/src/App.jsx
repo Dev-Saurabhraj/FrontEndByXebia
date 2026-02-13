@@ -1,10 +1,12 @@
 import { EventToDo } from './components/eventToDo.jsx'
 import UserCard from './components/userCard.jsx'
 import Wrapper from './components/wrapper.jsx'
+import Counter from './components/Counter2.jsx'
+import Calculator from './components/Calculator.jsx'
 import './App.css'
 import { DoSomeActivity } from './components/doSomeActivity.jsx'
 
-function App() {
+export default function App() {
   const users = [
     {
     name: "Virat Kohli Sharma",
@@ -21,17 +23,25 @@ function App() {
 
   return (
     <>
-      <h1> User Dashboard</h1>
-      <EventToDo title="saurabh"/>
-      <DoSomeActivity/>
-      <Wrapper title="User list">
-        {
-          users.map((use, index)=>(<UserCard key={index} user = {use}/>) )
-        }
-      
-      </Wrapper>
+      <h1> Counter</h1>
+     <Calculator/>   
     </>
   )
 }
 
-export default App
+
+
+
+// return (
+//     <>
+//       <h1> User Dashboard</h1>
+//       <EventToDo title="saurabh"/>
+//       <DoSomeActivity/>
+//       <Wrapper title="User list">
+//         {
+//           users.map((use, index)=>(<UserCard key={index} user = {use}/>) )
+//         }
+      
+//       </Wrapper>
+//     </>
+//   )
