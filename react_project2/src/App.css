@@ -1,0 +1,20 @@
+#main{
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: rgb(190, 240, 233);
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow:0 8px 10px rgb(171, 169, 169);
+}
+
+#home{
+      width: 100vw;
+  height: 100vh;
+
+    background-color: rgb(0, 0, 0);
+
+}

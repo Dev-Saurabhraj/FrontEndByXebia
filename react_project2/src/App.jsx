@@ -23,8 +23,12 @@ export default function App() {
 
   return (
     <>
-      <h1> Counter</h1>
-     <Calculator/>   
+    <div id="home">
+        <div id='main'>
+     <EventToDo title="saurabh"/> 
+    </div> 
+    </div>
+
     </>
   )
 }
