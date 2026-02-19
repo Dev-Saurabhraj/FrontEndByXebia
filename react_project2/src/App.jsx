@@ -4,6 +4,7 @@ import Wrapper from './components/wrapper.jsx'
 import Counter from './components/Counter2.jsx'
 import Calculator from './components/Calculator.jsx'
 import './App.css'
+import {Search} from './components/Search.jsx'
 import { DoSomeActivity } from './components/doSomeActivity.jsx'
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
     <div id="home">
         <div id='main'>
      <EventToDo title="saurabh"/> 
+     <Search/>
     </div> 
     </div>
 
