@@ -34,10 +34,20 @@ function App() {
 const [data, setData] = useState([]);
 
 
-  useEffect(()=>{
-    axios.get("http://jsonplaceholder.typicode.com/users")
-    .then(response=>setData(response.data)).catch(error => console.log(error));
+async function fetchApi(){
 
+  try {
+    await axios.get("http://jsonplaceholder.typicode.com/users")
+    .then(response=>setData(response.data)).catch(error => console.log(error));
+    
+  } catch (error) {
+    console.log(`Error while fetching api ${error}`);
+  }
+  
+}
+
+  useEffect(()=>{
+    fetchApi();
   }, [])
   return (
   <div>
