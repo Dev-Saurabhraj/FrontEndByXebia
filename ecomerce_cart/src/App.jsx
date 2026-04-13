@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import Header from './components/Header.jsx'
 import ProductCart from './components/ProductCard.jsx';
+import Cart from './components/Cart.jsx';
 import ProductList from './components/ProductList.jsx';
+import Navbar from './components/Navbar.jsx';
 
 function App() {
-  const [cart, setCart] = useState([]);
+const [cart, setCart] = useState([]);
 const products = [
   {id: 1, name: "Laptop", price: 6000, photoUrl: "https://images.pexels.com/photos/18105/pexels-photo.jpg"},
   {id: 2, name: "Phone", price: 5000, photoUrl: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg"},
@@ -33,15 +35,20 @@ const products = [
   {id: 25, name: "Drone", price: 28000, photoUrl: "https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg"}
 ];       
 
+
+function removeFromCart(product){
+setCart(cart.remove(product))
+}
 function addToCart(product){
-  setCart([...products, product]);
+  setCart([...cart, product]);
 }
   return (
     <>
       <div>
+        <Navbar/>
         <Header  cardCount={products.length}></Header>
-        <ProductList products={products}/>
-       
+        <ProductList products={products}  addToCart={addToCart}/>
+        <Cart count={cart.length}/>
       </div>
     </>
   )
