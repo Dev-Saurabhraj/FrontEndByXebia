@@ -1,121 +1,84 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import "tailwindcss";
+import { useEffect, useState } from 'react'
+import Header1 from './components/Header.jsx'
+import axios from 'axios';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [data, setData] = useState([]);
+  const [error , setError] = useState("");
+  const [isLoading, setLoading] = useState(true);
+  const [query, setQuery] = useState("tesla");
+  const [currPage, setCurrentPage] = useState(1);
+  const 
+
+  async function fetchData() {
+    try {
+      setLoading(true);
+
+      const response = await axios.get(
+        `https://newsapi.org/v2/everything?q=${query}&sortBy=publishedAt&apiKey=1dadad2aa3cf4f84bf71fba00b10482f`
+      );
+
+      const articles = response.data.articles;
+
+      // Filter based on title
+      const filtered = articles.filter((article) =>
+        article.title?.toLowerCase().includes(query.toLowerCase())
+      );
+      setData(filtered);
+      setLoading(false);
+    } catch (error) {
+      setError("Something went wrong");
+      console.log(error);
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const lastindex = currPage*6;
+  const firstIndex = (currPage-1)*6 + 1;
+  const currentNews = data.slice(firstIndex, lastindex);
 
   return (
     <>
-      <section id="center">
-        <div className="flex justify-center items-center">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      <Header1/>
+      <div className='bg-amber-600 text-2xl '>
+      <p
+      className='bg-amber-600 text-2xl we'
+      >
+          this is a page
+      </p>
+      
+      </div>
+      <input
+      className=' bg-amber-200 p-1.5 mx-auto'
+        type='text' 
+        placeholder='query' 
+        value={query} 
+        onChange={(e)=>setQuery(e.target.value)}
+      />
 
-      <div className="ticks"></div>
+      <button onClick={fetchData}> Search </button>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="max-w-sm mx-auto p-4 bg-white rounded-xl shadow-md" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="max-w-sm mx-auto p-4 bg-white rounded-xl shadow-md" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="bg-blue-500 hover:bg-blue-200 text-white p-2 rounded" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="bg-fuchsia-700" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      {
+        data.map((article, index) => (
+          <div className="card" key={index}>
+            <img src={article.urlToImage} alt="" />
+            <h2>{article.title}</h2>
+            <p>{article.description}</p>
+            <a href={article.url} target="_blank" rel="noreferrer">
+              Read More
+            </a>
+          </div>
+        ))
+      }
     </>
   )
 }
 
-export default App
+export default App;
